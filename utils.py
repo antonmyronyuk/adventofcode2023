@@ -13,3 +13,8 @@ def read_input(day: int, year: int = 2023) -> str:
     )
     response.raise_for_status()
     return response.text
+
+
+def download_input(day: int, year: int = 2023, path: str = "input.txt") -> None:
+    with open(path, "w") as file:
+        file.write(read_input(day, year))
